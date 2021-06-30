@@ -148,23 +148,8 @@ let ajax_interceptor = {
 };
     let bili_url = /https:\/\/www.bilibili.com.+/g.exec(document.URL)[0]
     let danmu_api = `https://service-otptqvj5-1256272652.bj.apigw.tencentcs.com/${bili_url}`
-    // GM_xmlhttpRequest({
-    //     method: "GET",
-    //     url: danmu_api,
-    //     headers: {
-    //         "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
-    //     },
-    //     data: "content=erwer",
-    //     onload: function(res){
-    let overrideTxt = '{"code": 23, "msg": "\u83b7\u53d6\u6210\u529f", "danum": 1, "danmuku": [["0", "right", "rgb(255, 255, 255)", "", "\u7b11\u6b7b\u4e86\uff0c\u8bf4\u6f14\u6280\u597d\uff1f\u4f60\u81ea\u5df1\u6ca1\u7ecf\u5386\u8fc7\u4f60\u81ea\u5df1\u600e\u4e48\u77e5\u9053\uff1f", "", "", "27.5px"], ["0", "top", "rgb(255, 97, 109)", "", "\u66ff\u6362\u5f39\u5e55\u6e90\u6210\u529f\uff0c\u524d\u65b9\u5171\u67091\u6761\u5f39\u5e55\uff0c\u8bf7\u505a\u597d\u51c6\u5907\u54df", "", "", "27.5px"]], "name": ""}';
+    let overrideTxt = '{"code": 23, "msg": "\u83b7\u53d6\u6210\u529f", "danum": 1, "danmuku": [["0", "right", "rgb(255, 255, 255)", "", "恭喜成功！！！", "", "", "27.5px"], ["0", "top", "rgb(255, 97, 109)", "", "啦啦啦啦", "", "", "27.5px"]], "name": ""}';
     ajax_interceptor.settings.ajaxInterceptor_rules = [{filterType: 'regex', switchOn: true, match: ".+dmku.+", overrideTxt: overrideTxt},
                                                        {filterType: 'regex', switchOn: true, match: ".+barrage.+", overrideTxt: overrideTxt}]
     console.log(ajax_interceptor)
-    //         window.XMLHttpRequest = ajax_interceptor.myXHR;
-    //         window.fetch = ajax_interceptor.myFetch;
-    //     },
-    //     onerror: function(res){
-    //         console.log("请求失败");
-    //     }
-    // })
 }
