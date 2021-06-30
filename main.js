@@ -152,4 +152,3 @@ let ajax_interceptor = {
     ajax_interceptor.settings.ajaxInterceptor_rules = [{filterType: 'regex', switchOn: true, match: ".+dmku.+", overrideTxt: overrideTxt},
                                                        {filterType: 'regex', switchOn: true, match: ".+barrage.+", overrideTxt: overrideTxt}]
     console.log(ajax_interceptor)
-}
